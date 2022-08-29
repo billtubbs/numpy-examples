@@ -7,8 +7,6 @@ def find_array_in_array(ar, ar2):
     # Find all matches with first element of ar2
     slices = tuple(slice(None, -s + 1) for s in ar2.shape)
     match_idx = np.nonzero(ar[slices] == ar2.flat[0])
-    
-    # ar[:-ar2.shape[0]:, :-ar2.shape[1]]
 
     # Check remaining indices of ar2
     for idx in list(np.ndindex(ar2.shape))[1:]:
